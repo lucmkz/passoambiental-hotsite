@@ -1,89 +1,734 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.10.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.10.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <title>Passo Ambiental</title>
+</head>
+
+<body>
+    <!-- Start NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand h1 mb-0" href="index.html">Passo Ambiental</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsite">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nave-item">
+                        <a class="nav-link" href="#whoIamI">Quem somos</a>
+                    </li>
+                    <li class="nave-item">
+                        <a class="nav-link" href="#diretores" onclick="slow()">Diretores</a>
+                    </li>
+                    <li class="nave-item">
+                        <a class="nav-link" href="#clientes">Clientes</a>
+                    </li>
+                    <li class="nave-item">
+                        <a class="nav-link" href="#experiencias">Experiências</a>
+                    </li>
+                    <li class="nave-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">
+                            Social
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="https://www.linkedin.com/company/passoambiental/"
+                                target="_blank">Linkedin</a>
+                            <a class="dropdown-item" href="https://wa.me/5511943213103" target="_blank">WhatsApp</a>
+                        </div>
+                    </li>
+                </ul>
+                <!--
+                    <form class="form-inline">
+                    <input class="form-control ml-4 mr-2" type="search" placeholder="Buscar...">
+                    <button class="btn btn-dark" type="Submit">Ok</button>
+                    </form>
+                -->
+            </div>
+        </div>
+    </nav>
+    <!-- End NAVBAR -->
+
+    <!-- Start title and container main-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center my-5">
+                <img src="./img/passo-logo.png" style="width: 255px" />
+                <h1 class="display-3" id="whoIamI"></i> Quem somos</h1>
+                <p>
+                    A Passo, Projetos Ambientais é uma empresa de consultoria na área socioambiental.
+
+                    A experiência de mais de 20 anos dos nossos profis- sionais traz um amplo e aprofundado
+                    conhecimento dos problemas gerados pelo processo de urbanização e infraestrutura do Brasil e em
+                    outros países, do impacto gerado por grandes projetos e, principal- mente, em relação às
+                    respectivas respostas e soluções a serem construídas.
+
+                    Atuamos no setor público e privado, trazendo sempre soluções que atendem de forma personalizada
+                    os projetos em que nos envolvemos.
+
+                    Nossas principais áreas de atuação são: Planejamento e Gestão de Território, Gestão de
+                    Resíduos, Soluções de investimento para o Setor Público e Gestão de Projetos para o Setor
+                    Privado.
+
+                    Acreditamos que nossos projetos colaboram para ampliar o diálogo e potencializar iniciativas que
+                    estão em sintonia com uma sociedade mais susten- tável e equilibrada.
+                </p>
+            </div>
+        </div>
+
+        <!-- Start Jumbotron Diretores -->
+        <div class="jumbotron jumbotron-fluid" id="diretores">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="display-4"></i>
+                            Diretores
+                        </h2>
+                        <p class="lead">A Passo conta com profissionais altamente capacitados e com ampla experiência,
+                            compromissados em desenvolver projetos e programas com prazos e recursos otimizados.
+
+                            Em destaque abaixo os sócios diretores:
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-pills justify-content-center mb-3" di="pills" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-01" data-toggle="pill" href="#navitem01">Sebastião
+                                    Ney Vaz</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-02" data-toggle="pill" href="#navitem02">Valéria
+                                    Bomfim</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="nav-pills-content">
+                            <div class="tab-pane fade show active" id="navitem01" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <!-- <img class="embed-responsive-item" src="img/placeholder-man.jpg" style="width: 350px; border-radius: 40px"></img> -->
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>
+                                            Engenheiro civil e sanitarista, mestre em desenvolvimento sustentável pela
+                                            Cátedra FLACAN, Argentina e doutor em energia pela UFABC. Consultor junto
+                                            ao Banco Mundial, Instituto Polis, FESPSP, desenvolvendo estudos, planos e
+                                            políticas voltadas ao saneamento ambiental. Além de experiência no
+                                            Brasil, possui também experiência internacional. Foi superin- tendente do
+                                            Semasa por mais de 10 anos. Membro do CONAMA, da diretoria da ABES-SP e
+                                            ex-presidente da ANAMMA.
+                                        </p>
+                                        <a href="mailto:vazneyjr@gmail.com">vazneyjr@gmail.com</a><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="navitem02" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <!-- <img class="embed-responsive-item" src="img/reactJs.png"></img> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>
+                                            Arquiteta e urbanista pela FAUSP, mestre em engenharia civil e urbana pela
+                                            POLIUSP e doutora pela PUCCAMP. Atuou como pesquisa- dora da CAPES CNPq na
+                                            POLIUSP e FINEP. Atuou também como consultora, gestora e coordenadora de
+                                            projetos em diversas regiões do Brasil, em empresas e instituições como a
+                                            FIPE. Ao longo da experiência profissional pôde participar de diversos
+                                            programas e políticas públicas. Tem vivência profissional em outros
+                                            países, como Moçambique e Malawi.
+                                        </p>
+                                        <a href="mailto:valcbomfim@gmail.com">valcbomfim@gmail.com</a><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start cards -->
+        <div class="col-12 mb-2">
+            <hr>
+        </div>
+        <div class="row">
+            <div class="row justify-content-sm-center justify-content-center" id="clientes">
+                <div class="col-12 text-center">
+                    <h1 class="display-3" id="whoIamI"></i> Clientes</h1>
+                    <p>Uma pequena lista de alguns dos nossos princpais clientes</p>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-6">
+                    <div class="card my-2 justify-content-center">
+                        <div class="card-header text-center">
+                            <h5>Peralta</h5>
+                        </div>
+                        <img class="card-img-top" src="./img/peralta-logo.png">
+                        <!-- <div class="card-body">
+                            <h4 class="card-title">Pedidos Pizzaria</h4>
+                            <h6 class="card-subtitle mb-3 text-muted">Sistema de pedidos Pizzaria</h6>
+                            <p class="card-text">
+                                Este projeto se trata de um sistema para pedidos de uma pizzaria (desenvolvimento)
+                            </p>
+                        </div> -->
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item">
+                                <a href="https://www.peraltaambiental.com.br/" target="_blank"
+                                    class="card-link">Site</a>
+                            </li>
+                            <!-- <li class="list-group-item">
+                                <a class="btn btn-outline-info" href="https://github.com/lucmkz/sistema-pedidos">
+                                    <i class="fab fa-github"></i> lucmkz/<br>sistema-pedidos</a>
+                            </li> -->
+                        </ul>
+                        <!-- <div class="card-footer text-muted">
+                            Técnologias usadas: React, Context API, firebase, JSX, styled-components, Hooks, Material UI
+                        </div> -->
+                    </div>
+
+                </div>
+                <div class="col-sm-6 col-md-4 col-6">
+                    <div class="card my-2 justify-content-center">
+                        <div class="card-header text-center">
+                            <h5>Peralta</h5>
+                        </div>
+                        <img class="card-img-top" src="./img/tcre-logo.jpg">
+                        <!-- <div class="card-body">
+                            <h4 class="card-title">Pedidos Pizzaria</h4>
+                            <h6 class="card-subtitle mb-3 text-muted">Sistema de pedidos Pizzaria</h6>
+                            <p class="card-text">
+                                Este projeto se trata de um sistema para pedidos de uma pizzaria (desenvolvimento)
+                            </p>
+                        </div> -->
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item">
+                                <a href="http://tcre.com.br/" target="_blank" class="card-link">Site</a>
+                            </li>
+                            <!-- <li class="list-group-item">
+                                <a class="btn btn-outline-info" href="https://github.com/lucmkz/sistema-pedidos">
+                                    <i class="fab fa-github"></i> lucmkz/<br>sistema-pedidos</a>
+                            </li> -->
+                        </ul>
+                        <!-- <div class="card-footer text-muted">
+                            Técnologias usadas: React, Context API, firebase, JSX, styled-components, Hooks, Material UI
+                        </div> -->
+                    </div>
+
+                </div>
+                <div class="col-sm-6 col-md-4 col-6">
+                    <div class="card my-2 justify-content-center">
+                        <div class="card-header text-center">
+                            <h5>JRHX</h5>
+                        </div>
+                        <img class="card-img-top" src="./img/logo-jhrx.png">
+                        <!-- <div class="card-body">
+                            <h4 class="card-title">Pedidos Pizzaria</h4>
+                            <h6 class="card-subtitle mb-3 text-muted">Sistema de pedidos Pizzaria</h6>
+                            <p class="card-text">
+                                Este projeto se trata de um sistema para pedidos de uma pizzaria (desenvolvimento)
+                            </p>
+                        </div> -->
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item">
+                                <a href="https://www.jrhx.com.br/" target="_blank" class="card-link">Site</a>
+                            </li>
+                            <!-- <li class="list-group-item">
+                                <a class="btn btn-outline-info" href="https://github.com/lucmkz/sistema-pedidos">
+                                    <i class="fab fa-github"></i> lucmkz/<br>sistema-pedidos</a>
+                            </li> -->
+                        </ul>
+                        <!-- <div class="card-footer text-muted">
+                            Técnologias usadas: React, Context API, firebase, JSX, styled-components, Hooks, Material UI
+                        </div> -->
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- End card -->
+        </div>
+        <!-- End start Title and Container main  -->
+
+
+        <!-- Start Jumbotron experiências -->
+        <div class="jumbotron jumbotron-fluid" id="experiencias">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="display-4"></i>
+                            Experiência
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-pills justify-content-center mb-3" di="pills" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-01" data-toggle="pill"
+                                    href="#navitem01-exp">Planejamento e gestão de território</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-02" data-toggle="pill" href="#navitem02-exp">Gestão de
+                                    resíduos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-02" data-toggle="pill" href="#navitem03-exp">Gestão de
+                                    projetos para setor privado</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-02" data-toggle="pill" href="#navitem04-exp">Solução de
+                                    investimento para o setor</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="nav-pills-content">
+                            <div class="tab-pane fade show active" id="navitem01-exp" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <!-- <img class="embed-responsive-item" src="img/placeholder-man.jpg" style="width: 350px; border-radius: 40px"></img> -->
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>
+                                            Tanto na esfera pública quanto no setor privado, destacamos a importância
+                                            de planejar as cidades através dos planos setoriais e trabalhos técnicos
+                                            sociais que promovam e aprofundem o diálogo com a sociedade civil e
+                                            organizada. Essa complexidade de diagnósticos, planos estratégicos,
+                                            estudos, comuni- cação social são parte da experiência da equipe da
+                                            Passo, que nos últimos 20 anos vem atuando na esfera pública e privada
+                                            colaborando para que grandes investimentos e empreendimentos sejam reali-
+                                            zados em diversas cidades do país e do mundo.
+                                            Abaixo alguns serviços e produtos que a Passo realiza:
+                                            <br>
+                                            <br>
+                                            - Plano Diretor de Saneamento Ambiental
+                                            <br>
+                                            - Plano Diretor de Abastecimento de Água
+                                            <br>
+                                            - Plano Diretor de Esgotamento Sanitário
+                                            <br>
+                                            - Plano Diretor de Drenagem Urbana
+                                            <br>
+                                            - Trabalho Técnico Social
+                                            <br>
+                                            - Diagnósticos e Estudos
+                                            <br>
+                                            - Socioambientais Territoriais
+                                            <br>
+                                            - Planejamento Estratégico Situacional
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="navitem02-exp" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <!-- <img class="embed-responsive-item" src="img/reactJs.png"></img> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>
+                                            Um dos principais desafios que temos em nossas cidades é a destinação de
+                                            nossos resíduos, a equipe da Passo conta com especialistas no assunto, que
+                                            atuaram muito tempo na esfera pública e privada encontrando soluções e
+                                            elaborando planos setoriais do tema. Nesse momento, em especial as grandes
+                                            cidades do Brasil estão chegando a um impasse em relação a qual modelo
+                                            utilizam para destinar seus resíduos, nossos profissionais estão na
+                                            vanguarda, estudando e propondo novas tecnologias que podem solucionar essas
+                                            questões.
+                                            Abaixo alguns serviços e produtos oferecidos pela Passo:
+                                            <br>
+                                            <br>- Plano de Gestão Integrada de Resíduos Sólidos
+                                            <br>- Plano de Gerenciamento de Resíduos Sólidos
+                                            <br>- Plano de Gerenciamento de Resíduos da Saúde
+                                            <br>- Projeto e Implantação de Coleta Seletiva
+                                            <br>- Soluções Tecnológicas na Área de Resíduos
+                                            <br>- Caracterização de Resíduos (Gravimetria)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="navitem03-exp" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <!-- <img class="embed-responsive-item" src="img/reactJs.png"></img> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>
+                                            Grandes investimentos do setor privado sempre tem muitas etapas a serem
+                                            cumpridas no seu processo de implantação, desde o projeto básico,
+                                            passando pelo processo de licenciamento ambiental até chegar no alvará de
+                                            funcionamento, os empreendedores das mais diversas áreas tem sempre o
+                                            desafio de propor o diálogo, conectar a sociedade ao seu proje- to e
+                                            mostrar de forma clara e objetiva seus propósitos, nesse contexto, os
+                                            profissionais da Passo atuam de forma personalizada na gestão de proje-
+                                            tos, fazendo com que a empresa enxergue seu projeto de vários ângulos e
+                                            consiga transmitir de forma mais clara seus objetivos. Nossa consultoria
+                                            também constrói nesse processo, se for desejo da empresa, uma revisão de
+                                            valores, como por exemplo a economia circular, que permite que a empresa
+                                            aproxime seu projeto da sociedade.
+                                            Abaixo nossos serviços e produtos deste tema:
+                                            <br>
+                                            <br>- Gestão de Projetos
+                                            <br>- (Re)Organização, Comunicação e Diálogo Social de Projetos de
+                                            Grande Impacto
+                                            <br>- Implantação do Conceito de Economia Circular
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="navitem04-exp" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <!-- <img class="embed-responsive-item" src="img/reactJs.png"></img> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>
+                                            Existe uma crescente preocupação de pensar novas fórmulas para o
+                                            investimento público, com os municípios e Estados com despesas altas, cada
+                                            vez mais existe a necessidade de captar recurso juntos a Órgãos
+                                            Financiadores e Agências de Fomento. Nossos profissionais têm experiência
+                                            prática na busca de novos investi- mentos, como por exemplo as Parcerias
+                                            Público Privado (PPP).
+                                            Com experiência e tratando cada caso de forma personalizada conseguimos
+                                            contribuir nos itens abaixo:
+                                            <br>
+                                            <br>- Elaboração de Projeto, Gestão de Contratos e Captação de Recursos
+                                            junto a Órgãos Financiadores (CEF, BID, BIRD, BNDES, Outros) e Agências
+                                            de Fomento
+                                            <br>- Modelagem de PPP (Parceria Público Privado) para Resíduos Sólidos e
+                                            Saneamento Básico (Água e Esgoto)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <!-- Start Contact -->
+            <div class="contact">
+                <div class="row">
+                    <div class="col-12 text-center my-5" id="contact">
+                        <h1>Contato</h1>
+                        <p class="lead">Entre em contato através do WhatsApp
+                        </p>
+
+                        <a href="https://wa.me/5511943213103">
+                            <button class="btn btn-outline-success" type="button" id="myBtnWhatsDesk"><i
+                                    class="fab fa-whatsapp"></i></button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 text-center my-5" id="contact">
+                    <p class="lead"> Ou se preferir, me mande um email
+                    </p>
+                </div>
+
+                <div class="row justify-content-center mb-5">
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-8">
+                        <form class="form" method="POST" action="/php/email.php">
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Nome"
+                                        name="inputName">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <input type="text" class="form-control" id="inputCompany" placeholder="Empresa"
+                                        name="inputCompany">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <textarea class="form-control" rows="5" id="inputMsg" name="inputMsg"
+                                        placeholder="Mensagem"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                    <input type="text" class="form-control" id="fone" name="fone"
+                                        placeholder="Telefone">
+                                </div>
+                                <div class="form-group col-sm-8">
+                                    <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+
+                                    <!-- <a tabindex="0" class="btn btn-secondary ml-2" role="button" data-toggle="popover"
+                                        data-placement="right" data-trigger="focus" title="Texto"
+                                        data-content="Texto qqr qqr qqr de ajuda quanquer boa sorte">Ajuda
+                                    --> </a>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-2">
+                <hr>
+            </div>
+            <div class="col-sm-4">
+                <h3>Motivo</h3>
+                <p>Um site com o propósito de servir expor um pouco mais sobre a passoambiental.</p>
+                <p>Estamos à disposição para exclarecimentos de quaisquer tipos de dúvida</p>
+
+                <p>Entre em contato!</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Menu</h3>
+                <div class="list-group text-center">
+                    <a href="#whoIamI" class="list-group-item list-group-item-action list-group-item-primary">Quem
+                        somos</a>
+                    <a href="#diretores" class="list-group-item list-group-item-action list-group-item-primary">
+                        Diretores</a>
+                    <a href="#clientes"
+                        class="list-group-item list-group-item-action list-group-item-primary">Clientes</a>
+                    <a href="#experiencias"
+                        class="list-group-item list-group-item-action list-group-item-primary">Experiências</a>
+                    <a href="#contact"
+                        class="list-group-item list-group-item-action list-group-item-primary">Contato</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h3>Social</h3>
+                <div class="btn-group-vertical btn-block btn-group-lg" role="group">
+                    <a class="btn btn-outline-primary" href="https://www.linkedin.com/company/passoambiental/"
+                        target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a>
+                    <a class="btn btn-outline-success" href="https://wa.me/5511943213103" target="_blank"><i
+                            class="fab fa-whatsapp-square"></i> Whastapp</a>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">
+                        DIA A DIA, FACE A FACE, PASSO A PASSO
+                    </p>
+                    <footer class="blockquote-footer">
+                        <p>Ações sustentáveis para um mundo em transformação</p>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- Modal Esctructure
+    <div class="modal fade" id="modalPlaylist" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Playlist</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5>Como usar a playlist</h5>
+                            <p>
+                                Para usar a Playlist:
+                            </p>
+                            <p>
+                                - Acessar o <a href="www.youtube.com">Youtube</a>, escolher um vídio para adicionar à playlist. <br>
+                                - Copiar o <strong>URL</strong> do vídio.<br>
+                                - Acessar a <a href="http://lucaswebs.com/playlist/index.html">Playlist</a><br>
+                                - Clicar em "cadastrar"<br>
+                                - Inserir o <strong>ID</strong> do vídeo, e depois inserir um <strong>Título</strong>
+                                para vídeo.<br>
+                                - O vídeo aparecerá na <a href="http://lucaswebs.com/playlist/index.html">Playlist</a>, e para assistir basta clicar<br>
+                            </p>
+                            <p>
+                                Podemos inserir quantos vídeos quiser na playlist
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+    <div class="modal fade" id="modalTodo" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">TodoList</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5>Como usar a ToDoList</h5>
+                            <p>
+                                Para usar a ToDoList:
+                            </p>
+                            <p>
+                                - Acessar a <a href="http://lucaswebs.com/todolist/index.html">ToDoList</a><br>
+                                - Para adicionar um novo a fazer em sua lista, insira o nome da tarefa e clique em "Adicionar"<br>
+                                - Depois de concluir a tarefa, clique sobre o nome dela, para que então seja marcada como tarefa concluída<br>
+                            </p>
+                            <br><br>
+                            <h5>Funcionalidades</h5>
+                            <p>
+                                - Ao selecionar o filtro "Todos", serão listadas todas as tarefas adicionadas.<br>
+                                - Ao selecionar o filtro "Finalizados", serão listadas todas as tarefas concluídas.<br>
+                                - Ao selecionar o filtro "A Fazer", serão listadas todas as tarefas pendentes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="desktop-hide">
+        <a href="https://wa.me/5511982116039">
+            <button class="btn btn-outline-success" type="button" id="myBtnWhats"><i
+                    class="fab fa-whatsapp"></i></button>
+        </a>
+    </div>
+
+    <div class="mobile-hide">
+        <div class="col-md-2">
+            <button type="button" onclick="topFunction()" id="myBtn"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        _linkedin_partner_id = "4540569";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
     </script>
-  </body>
+    <script type="text/javascript">
+        (function (l) {
+            if (!l) {
+                window.lintrk = function (a, b) { window.lintrk.q.push([a, b]) };
+                window.lintrk.q = []
+            }
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript"; b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })(window.lintrk);
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=4540569&fmt=gif" />
+    </noscript>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YY0L8T3RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7YY0L8T3RK');
+    </script>
+    <script>
+
+        var $doc = $('html, body');
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+            return false;
+        }
+
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        $('a[href="#top"]').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+            return false;
+        });
+
+
+    </script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCai0rLqJLR8O2ftjSdXL9NAg4iggSxK9A",
+    authDomain: "passo-projetos-ambientai-9d431.firebaseapp.com",
+    projectId: "passo-projetos-ambientai-9d431",
+    storageBucket: "passo-projetos-ambientai-9d431.appspot.com",
+    messagingSenderId: "621788046836",
+    appId: "1:621788046836:web:5b6b316672c2dd20e305a1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+
+
+
+</body>
+
 </html>
