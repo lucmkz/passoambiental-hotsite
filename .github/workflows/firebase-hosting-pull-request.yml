@@ -12,5 +12,7 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PASSOAMBIENTAL_HOTSITE }}'
-          projectId: passoambiental-hotsite
+          firebaseServiceAccount: >-
+            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PASSO_PROJETOS_AMBIENTAI_9D431
+            }}
+          projectId: passo-projetos-ambientai-9d431
