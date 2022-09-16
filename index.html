@@ -707,30 +707,32 @@
 
 
     </script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyD7IlhhOZB57QcOkQ-MbNeA3YZKUQ0Zl20",
+        authDomain: "passoambiental-hotsite.firebaseapp.com",
+        projectId: "passoambiental-hotsite",
+        storageBucket: "passoambiental-hotsite.appspot.com",
+        messagingSenderId: "702464439515",
+        appId: "1:702464439515:web:a81824bfa8d44ee93148fe",
+        measurementId: "G-967R4SCEQ0"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
 
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyB_O4HTpfvRVcED6aOGwJGkhtJE9my6eMo",
-    authDomain: "passo-projetos-ambientais.firebaseapp.com",
-    projectId: "passo-projetos-ambientais",
-    storageBucket: "passo-projetos-ambientais.appspot.com",
-    messagingSenderId: "326508936788",
-    appId: "1:326508936788:web:225c7bf4d93edc60dcf7c1",
-    measurementId: "G-SL7S6Y0878"
-  };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 </body>
 
 </html>
