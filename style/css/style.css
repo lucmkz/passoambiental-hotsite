@@ -1,0 +1,56 @@
+.scrollspySite {
+    position: relative;
+    overflow: auto;
+	height: 380px;
+	border: 1px solid aqua;
+	outline: none;
+}
+
+#myBtnWhatsDesk {
+	width: 200px;
+	height: 200px;
+	font-size: 100px;
+}
+
+#myBtnWhats {
+	position: fixed;
+	bottom: 8px;
+	right: 8px;
+	opacity: 0.7;
+	border: none;
+	outline: none;
+	border-radius: 20%;
+	font-size: 40px;
+}
+
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	border: none;
+	outline: none;
+	background-color: #40E0D0;
+	color: white;
+	cursor: pointer;
+	border-radius: 20%;
+	font-size: 30px;
+	width: 50px;
+	height: 50px;
+}
+
+#myBtn:hover {
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #40E0D0;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-hide{ display: none !important; }
+    }
+    @media only screen and (max-width: 768px) {
+    .mobile{ display: inline !important; }
+    }
+    @media only screen and (min-width: 769px) {
+    .desktop-hide{ display: none !important; }
+    }
